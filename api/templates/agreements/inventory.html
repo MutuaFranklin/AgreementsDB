@@ -1,0 +1,45 @@
+{% extends 'agreements/base.html'%} 
+{% load static %} 
+{% block content %}
+
+<div class="container-fluid inventory">
+    <div class="col-md-11 inventory-list">
+        <h5>DIGITAL ASSETS INVENTORY</h5>
+
+        <div class="table">
+            <table class="mt-3">
+                <tr>
+                  <th>Index</th>
+                  <th>Platform title</th>
+                  <th>Under development</th>
+                  <th>Managing institution</th>
+                  <th>Manager</th>
+                  <th>License type</th>
+                </tr>
+                <tr>
+                    {% for inventory in inventory %}
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{inventory.platform_title}}</td>
+                    <td>{{inventory.under_development}}</td>
+                    <td>{{inventory.managing_institution}}</td>
+                    <td>{{inventory.manager}}</td>
+                    <td>{{inventory.license_type}}</td>
+                    <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-info">View Inventory</button></a></td>
+                    {% empty %}
+						<p>No Uploaded Agreements</p>
+					{% endfor%}
+                </tr>
+        
+        
+        
+        
+              </table>
+
+        </div>
+
+
+        
+    </div>
+</div>
+
+{% endblock %}

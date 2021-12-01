@@ -1,0 +1,333 @@
+body{
+    background-image: url(../images/UNEP2.png);
+    background-size: cover;
+    height: 100%;
+
+}
+
+.navbar{
+    font-family: 'Sofia', cursive;
+    font-weight: bold;
+    color: darkblue !important;
+    background: transparent !important;
+}
+
+.navbar li a{
+    color: rgb(121, 166, 224) !important;
+    font-size: 18px;
+    margin-right: 12px;
+
+}
+
+.navbar .btn{
+    color: white !important;
+    font-size: 20px;
+}
+
+.navbar-brand{
+    color: white !important;
+}
+
+
+/* INDEX */
+.index{
+    background-size: cover;
+}
+
+
+.index>.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-size: cover;
+
+}
+
+.index>.row>.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    background-color: rgba(206, 205, 214, 0.3);
+
+
+}
+
+.index .row .text{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(237, 249, 250, 0.2);
+    font-size: 5em;
+    text-align: center;
+    font-weight: bold ;
+    line-height: 1.5;
+    color: rgb(59, 127, 216);
+
+    
+
+}
+
+/* LOGIN */
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(203, 214, 216, 0.4);
+    height: 70%;
+
+}
+.microsoft-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(216, 214, 194);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.button button{
+    width: 80%;
+    border-radius: 5px;
+    background-color: rgba(20, 3, 68, 0.4);
+    border: none;
+}
+
+
+/* HOME */
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+
+.home .h-details{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(18, 16, 34, 0.6);
+    height: 70vh;
+    background-image: linear-gradient(rgba(8, 51, 80, 0.5),rgba(3, 41, 39, 0.5)),url(../images/T5.jpg);
+    background-size: cover;
+
+
+
+}
+
+.home .h-details .card{
+    margin: 5px;
+    background-color: rgba(135, 135, 248, 0.2) !important;
+    height:35vh;
+    width: 30vh;
+    box-shadow:  0 4px 8px 0 rgba(4, 58, 158, 0.7);
+
+}
+
+.card:hover{
+    filter:drop-shadow(8px 8px 10px rgb(4, 31, 150));
+
+}
+
+
+.home .h-details .row{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body h1{
+    font-size: 80px;
+    font-weight: bold;
+    color: rgb(97, 107, 245);
+
+}
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* AGREEMENTS */
+.agreements{
+    display: flex;
+    justify-content: center;
+
+}
+
+.agreements-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    background-image: linear-gradient(rgba(49, 93, 122, 0.5),rgba(3, 41, 39, 0.5)),url(../images/J6.jpg);
+    background-size: cover;
+    height: 80vh;
+
+
+}
+
+.agreements-list img {
+    filter: grayscale(100%);
+  }
+
+.agreements-list h5{
+    color: white;
+    margin-top: 3px;
+}
+
+.table{
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 97%;
+
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+
+
+  th {
+    color: white;
+
+  }
+
+ 
+  
+  tr:nth-child(even) {
+    background-color: rgba(226, 226, 235, 0.7) !important;
+}
+
+  table button{
+      width: 100%;
+  }
+
+  table button:hover{
+      background-color: rgb(8, 158, 143) !important;
+}
+
+
+/* SINGLE AGREEMENT */
+.single-agreement{
+    display: flex;
+    justify-content: center;
+}
+
+.agreement-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.agreement-details h5{
+    color: white;
+}
+
+.agreement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(185, 192, 197, 0.3);
+    color: white;
+
+}
+
+.agreement .description{
+    margin: 2%;
+    background-color: rgba(1, 10, 22, 0.3);
+    width: 95%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+ 
+}
+
+.agreement .description h6{
+    color: rgba(75, 168, 245, 0.5);
+
+}
+
+.fa{
+    font-size: 50px;
+    color: rgba(20, 16, 54, 0.5);
+}
+
+.fa:hover{
+    color: rgb(11, 80, 184, 0.5);
+    
+}
+
+span{
+    font-weight: bold;
+
+}
+
+
+/* INVENTORY */
+.inventory{
+    display: flex;
+    justify-content: center;
+
+}
+
+.inventory-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    background-image: linear-gradient(rgba(20, 70, 104, 0.5),rgba(3, 41, 39, 0.5)),url(../images/J4.jpg);
+
+    /* background-image: url(../images/J4.jpg); */
+    background-size: cover;
+    height: 80vh;
+
+
+}
+
+.inventory-list h5{
+    margin-top: 3px;
+    color: white;
+}

@@ -1,0 +1,45 @@
+{% extends 'agreements/base.html'%} 
+{% load static %} 
+{% block content %}
+
+<div class="container-fluid single-agreement">
+    <div class="col-md-11 agreement-details mt-5">
+        <h5>{{inventory.platform_title}}</h5>
+
+            <div class="col-md-5 agreement fw-light">
+                <div class="description">
+                    <h6>Content Description</h6>
+                    <p class="m-1">{{inventory.description}}</p>
+                </div>
+                <div class="description">
+                    <p><span>Under Development: </span>{{inventory.under_development}}</p>
+                    <p><span>Managing Institution:</span> {{inventory.managing_institution}}</p>
+                    <p><span>Manager:</span> {{inventory.manager}}</p>
+                    <p><span>License Type:</span> {{inventory.license_type}}</p>
+                    <p><span>Spatial Coverage:</span> {{inventory.spatial_coverage}}</p>
+                    <p><span>Temporal Coverage::</span>{{inventory.temporal_coverage}}</p>
+                    <p><span>Data standards compliance: </span>{{inventory.data_standards_compliance}}</p>
+                    <p><span>Web Services:</span> {{inventory.web_services}}</p>
+                    <p><span>Backend Stack:</span> {{inventory.backend_stack}}</p>
+
+                </div>
+
+                <div class="description">
+                    <p><span>Uploaded By: </span> {{inventory.uploaded_by}}</p>
+
+                    <p><span>Uploaded On: </span> {{inventory.created_at}}</p>
+
+
+                </div>
+
+            </div>
+           
+
+        </div>
+
+
+        
+    </div>
+</div>
+
+{% endblock %}

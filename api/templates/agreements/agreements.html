@@ -1,0 +1,49 @@
+{% extends 'agreements/base.html'%} 
+{% load static %} 
+{% block content %}
+
+<div class="container-fluid agreements">
+    <div class="col-md-11 agreements-list">
+        <h5>AGREEMENTS</h5>
+
+        <div class="table">
+            <table class="mt-3">
+                <tr>
+                  <th>Index</th>
+                  <th>Agreement Title</th>
+                  <th>Agreement Type</th>
+                  <th>Receiving Division</th>
+                  <th>Service Provider</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+
+        
+                </tr>
+                <tr>
+                    {% for agreement in agreements %}
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{agreement.agreement_title}}</td>
+                    <td>{{agreement.agreement_type}}</td>
+                    <td>{{agreement.division}}</td>
+                    <td>{{agreement.service_provider}}</td>
+                    <td>{{agreement.start_date}}</td>
+                    <td>{{agreement.end_date}}</td>
+                    <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn btn-info">View Agreement</button></a></td>
+                    {% empty %}
+						<p>No Uploaded Agreements</p>
+					{% endfor%}
+                </tr>
+        
+        
+        
+        
+              </table>
+
+        </div>
+
+
+        
+    </div>
+</div>
+
+{% endblock %}
