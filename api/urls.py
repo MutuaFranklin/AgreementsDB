@@ -17,6 +17,8 @@ urlpatterns = [
     path('inventory', views.inventory, name='inventory'),
     path('inventory/<id>', views.single_inventory, name='single_inventory'),
     path('download/', views.download_file, name='download_file'),
+    path('dashboard', views.admin_dashboard, name='dashboard'),
+
 
     # path('search/', views.search, name='search_business'),
    

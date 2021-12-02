@@ -13,7 +13,7 @@ body{
 }
 
 .navbar li a{
-    color: rgb(121, 166, 224) !important;
+    color: rgb(158, 197, 248) !important;
     font-size: 18px;
     margin-right: 12px;
 
@@ -331,3 +331,4 @@ span{
     margin-top: 3px;
     color: white;
 }
+

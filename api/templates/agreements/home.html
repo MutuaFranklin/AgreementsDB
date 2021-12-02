@@ -5,17 +5,18 @@
         <h4 class="mt-5">UNEP AGREEMENTS DATABASE</h4>
 
         <div class="row mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">{{agreements|length}}</h1>
+                    </div>
+                    <div class="card-footer">
+                        <h6>All Contracts</h6>
+                    </div>
+                </div>
+                <!-- <a href="{%url 'agreements'%}"></a> -->
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">12</h1>
-                </div>
-                <div class="card-footer">
-                    <h6>All Contracts</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="card-title">3</h1>
+                    <h1 class="card-title">{{license|length}}</h1>
                 </div>
                 <div class="card-footer">
                     <h6>IT Licenses</h6>
@@ -23,7 +24,7 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">5</h1>
+                    <h1 class="card-title">{{sla|length}}</h1>
                 </div>
                 <div class="card-footer">
                     <h6>SLA Agreements</h6>
@@ -31,7 +32,7 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">4</h1>
+                    <h1 class="card-title">{{subscription|length}}</h1>
                 </div>
                 <div class="card-footer">
                     <h6>Subscription</h6>
@@ -39,7 +40,7 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">36</h1>
+                    <h1 class="card-title">{{inventory|length}}</h1>
                 </div>
                 <div class="card-footer">
                     <h6>Inventory</h6>

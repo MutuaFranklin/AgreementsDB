@@ -31,8 +31,28 @@ def login_user(request):
 
 @login_required(login_url='login')
 def home(request):
+    agreements = Agreement.objects.all()
+    inventory = Digital_assets_inventory.objects.all()
+    license_count = Agreement.filter_by_agreement_type('IT License')
+    SLA_count = Agreement.filter_by_agreement_type('SLA')
+    subscription_count = Agreement.filter_by_agreement_type('Subscription')
 
-    return render(request, 'agreements/home.html')
+
+
+    print(license_count)
+
+    context = {
+        "agreements":agreements,
+        "inventory":inventory,
+        "license": license_count,
+        "sla":SLA_count,
+        "subscription": subscription_count,  
+
+       
+    }
+
+
+    return render(request, 'agreements/home.html', context)
 
 @login_required(login_url='login')
 def agreements(request):
@@ -40,7 +60,8 @@ def agreements(request):
     
        
     context = {
-        "agreements":agreements
+        "agreements":agreements,
+
        
     }
     
@@ -95,3 +116,13 @@ def download_file(request):
     response['Content-Disposition'] = "attachment; filename=%s" % filename
     # Return the response value
     return response
+
+
+@login_required(login_url='login')
+def admin_dashboard(request):
+
+    context = {
+       
+    }
+    
+    return render(request, 'admin-dashboard/dashboard.html', context)
