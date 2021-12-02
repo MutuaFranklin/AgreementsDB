@@ -19,6 +19,21 @@ body{
 
 }
 
+.navbar li a:hover{
+    color: rgb(233, 233, 240) !important;
+    font-size: 18px;
+    margin-right: 12px;
+
+}
+
+.dropdown-menu{
+    background-color: rgb(7, 58, 59);
+}
+
+.dropdown-menu li a:hover{
+    background-color: rgb(7, 58, 59);
+}
+
 .navbar .btn{
     color: white !important;
     font-size: 20px;
@@ -286,17 +301,18 @@ table {
 }
 
 .agreement .description h6{
-    color: rgba(75, 168, 245, 0.5);
+    color: rgb(158, 197, 248) !important;
 
 }
 
 .fa{
     font-size: 50px;
-    color: rgba(20, 16, 54, 0.5);
+    color: rgba(146, 164, 190, 0.5);
+
 }
 
 .fa:hover{
-    color: rgb(11, 80, 184, 0.5);
+    color: rgba(78, 127, 202, 0.5);
     
 }
 
