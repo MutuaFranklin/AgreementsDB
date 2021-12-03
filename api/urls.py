@@ -13,11 +13,13 @@ urlpatterns = [
     path('account/', include('django.contrib.auth.urls')),
     path('home', views.home,name='home'),
     path('agreements', views.agreements, name='agreements'),
-    path('agreement/<id>', views.single_agreement, name='single_agreement'),
+    path('agreement/<id>', views.view_agreement, name='single_agreement'),
+    path('update-agreement/<id>', views.update_agreement, name='update_agreement'),
     path('inventory', views.inventory, name='inventory'),
-    path('inventory/<id>', views.single_inventory, name='single_inventory'),
+    path('inventory/<id>', views.view_inventory, name='single_inventory'),
+    path('update-inventory/<id>', views.update_inventory, name='update_inventory'),
     path('download/', views.download_file, name='download_file'),
-    path('dashboard', views.admin_dashboard, name='dashboard'),
+    path('focal', views.focal_points, name='focal'),
 
 
     # path('search/', views.search, name='search_business'),

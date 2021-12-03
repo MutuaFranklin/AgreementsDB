@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.shortcuts import render, redirect, get_object_or_404
-from api.models import Agreement, Agreement_type, Digital_assets_inventory
+from api.models import Agreement, Agreement_type, Digital_assets_inventory, Profile, Role
 from django.contrib.auth.decorators import login_required
 import mimetypes
 import os
@@ -37,10 +37,6 @@ def home(request):
     SLA_count = Agreement.filter_by_agreement_type('SLA')
     subscription_count = Agreement.filter_by_agreement_type('Subscription')
 
-
-
-    print(license_count)
-
     context = {
         "agreements":agreements,
         "inventory":inventory,
@@ -56,11 +52,25 @@ def home(request):
 
 @login_required(login_url='login')
 def agreements(request):
+    current_user_profile = Profile.objects.filter(user = request.user)
     agreements = Agreement.objects.all()
+    focal_role = Role.objects.filter(id=4).first()
+    admin_role = Role.objects.filter(id=5).first()
+
+
+
+    focal_point = Profile.objects.filter(role= focal_role)
+    admin = Profile.objects.filter(role= admin_role)
+
+
     
+
        
     context = {
         "agreements":agreements,
+        "focal_point":focal_point,
+        "admin":admin,
+        "current_user":current_user_profile,
 
        
     }
@@ -68,13 +78,23 @@ def agreements(request):
     return render(request, 'agreements/agreements.html', context)
 
 @login_required(login_url='login')
-def single_agreement(request, id):
+def view_agreement(request, id):
     agreement = Agreement.objects.filter(id=id).first()
     context = {
         "agreement":agreement,  
        
     }
     return render(request, 'agreements/single_agreement.html', context)
+
+
+@login_required(login_url='login')
+def update_agreement(request, id):
+    agreement = Agreement.objects.filter(id=id).first()
+    context = {
+        "agreement":agreement,  
+       
+    }
+    return render(request, 'updates/update_agreement.html', context)
 
 @login_required(login_url='login')
 def inventory(request):
@@ -89,7 +109,7 @@ def inventory(request):
 
 
 @login_required(login_url='login')
-def single_inventory(request, id):
+def view_inventory(request, id):
     inventory = Digital_assets_inventory.objects.filter(id=id).first()
 
     context = {
@@ -97,6 +117,18 @@ def single_inventory(request, id):
        
     }
     return render(request, 'agreements/single_inventory.html', context)
+
+
+@login_required(login_url='login')
+def update_inventory(request, id):
+    inventory = Digital_assets_inventory.objects.filter(id=id).first()
+
+    context = {
+        "inventory":inventory,  
+       
+    }
+    return render(request, 'updates/update_inventory.html', context)
+
 
 
 def download_file(request):
@@ -119,10 +151,10 @@ def download_file(request):
 
 
 @login_required(login_url='login')
-def admin_dashboard(request):
+def focal_points(request):
 
     context = {
        
     }
     
-    return render(request, 'admin-dashboard/dashboard.html', context)
+    return render(request, 'focal-points/focal_points.html', context)

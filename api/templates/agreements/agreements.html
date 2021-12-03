@@ -29,6 +29,9 @@
                     <td>{{agreement.start_date}}</td>
                     <td>{{agreement.end_date}}</td>
                     <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn btn-info">View Agreement</button></a></td>
+                            <td><a href="/update-agreement/{{agreement.id}}"><button type="button" class="btn btn-success">Update Agreement</button></a></td>
+                            <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn btn-danger">Delete Agreement</button></a></td>
+
                     {% empty %}
 						<p>No Uploaded Agreements</p>
 					{% endfor%}

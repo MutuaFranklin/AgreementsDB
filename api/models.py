@@ -44,6 +44,14 @@ class Profile(models.Model):
     def update_profile(cls, prof_id, updated_role):
         profile = cls.objects.filter(id = prof_id).update(role = updated_role)
         return profile
+
+    def filter_by_user_role(cls, filter_role):
+        try:
+            role_user= cls.objects.filter(role__role__icontains=filter_role)
+            return role_user
+        except Exception:
+            return  "No User found in your filter role"
+    
     
     
 

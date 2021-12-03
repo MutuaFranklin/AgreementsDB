@@ -24,7 +24,9 @@
                     <td>{{inventory.managing_institution}}</td>
                     <td>{{inventory.manager}}</td>
                     <td>{{inventory.license_type}}</td>
-                    <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-info">View Inventory</button></a></td>
+                    <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-primary">View Inventory</button></a></td>
+                    <td><a href="/update-inventory/{{inventory.id}}"><button type="button" class="btn btn-warning">Update Inventory</button></a></td>
+                    <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-danger">Delete Inventory</button></a></td>
                     {% empty %}
 						<p>No Uploaded Agreements</p>
 					{% endfor%}
