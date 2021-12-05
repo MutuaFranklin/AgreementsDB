@@ -26,6 +26,10 @@ body{
 
 }
 
+.nav-span{
+    color: rgb(120, 223, 226);
+}
+
 .dropdown-menu{
     background-color: rgb(7, 58, 59);
 }
@@ -114,6 +118,25 @@ body{
     font-weight: bold;
 }
 
+.alert{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(22, 20, 20, 0.4);
+}
+
+.alert-danger{
+    color: red !important;
+}
+
+.alert-success{
+    color:green !important;
+}
+
+.login-error{
+    color: red;
+}
+
 .button{
     display: flex;
     justify-content: center;
@@ -143,9 +166,9 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(18, 16, 34, 0.6);
+    /* background-color: rgba(151, 147, 202, 0.3); */
     height: 70vh;
-    background-image: linear-gradient(rgba(8, 51, 80, 0.5),rgba(3, 41, 39, 0.5)),url(../images/T5.jpg);
+    background-image: linear-gradient(rgba(10, 13, 20, 0.7),rgba(9, 3, 29, 0.8)),url(../images/J6.jpeg);
     background-size: cover;
 
 
@@ -154,15 +177,14 @@ body{
 
 .home .h-details .card{
     margin: 5px;
-    background-color: rgba(135, 135, 248, 0.2) !important;
+    background-color: rgba(10, 9, 12, 0.4) !important;
     height:35vh;
     width: 30vh;
-    box-shadow:  0 4px 8px 0 rgba(4, 58, 158, 0.7);
+    box-shadow:  0 4px 8px 0 rgba(158, 181, 223, 0.7);
 
 }
-
 .card:hover{
-    filter:drop-shadow(8px 8px 10px rgb(4, 31, 150));
+    filter:drop-shadow(8px 8px 10px rgba(17, 96, 175, 0.7));
 
 }
 
@@ -212,6 +234,20 @@ body{
 
 }
 
+.message-success p{
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.message-error p{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
 .agreements-list img {
     filter: grayscale(100%);
   }
@@ -221,9 +257,35 @@ body{
     margin-top: 3px;
 }
 
+.publish{
+    background-color: rgb(56, 146, 149);
+    border: none;
+    color: white;
+}
+
+.publish:hover{
+    background-color: rgb(37, 176, 197);
+}
+
+.modal-content{
+    background-color: rgba(10, 13, 58, 0.8) !important;
+    color: white;
+}
+
+.btn-close{
+    background-color: white !important;
+
+
+}
+
+.upload-btn{
+    width: 100%;
+}
 .table{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 table {
@@ -245,18 +307,40 @@ table {
 
   }
 
+  table input {
+      font-size: 15px;
+      color: rgb(70, 67, 67) !important;
+
+
+  }
+
+  table input::placeholder{
+      font-size: 18px;
+      color: rgb(70, 67, 67) !important;
+  }
+
  
   
   tr:nth-child(even) {
     background-color: rgba(226, 226, 235, 0.7) !important;
 }
 
+tr:nth-child(odd) {
+ color: white !important;
+}
+
   table button{
-      width: 100%;
+      width: 90%;
+      color: white !important;
+  }
+
+  table .view{
+    background-color: rgb(49, 39, 197);
   }
 
   table button:hover{
-      background-color: rgb(8, 158, 143) !important;
+      background-color: rgb(10, 121, 110) !important;
+      border: none;
 }
 
 
@@ -289,7 +373,7 @@ table {
 
 .agreement .description{
     margin: 2%;
-    background-color: rgba(1, 10, 22, 0.3);
+    background-color: rgba(8, 9, 10, 0.5);
     width: 95%;
     border-radius: 5px;
     display: flex;
@@ -321,6 +405,29 @@ span{
 
 }
 
+/* AGREEMENT UPDATE */
+.agreement-update{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(49, 93, 122, 0.3),rgba(3, 41, 39, 0.4)),url(../images/J6.jpg);
+    color: white;
+
+}
+
+.agreement-update-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(9, 47, 56, 0.2);
+
+
+}
+
+
+
 
 /* INVENTORY */
 .inventory{
@@ -341,6 +448,10 @@ span{
     height: 80vh;
 
 
+}
+
+.btn-update{
+    background-color: rgb(37, 3, 61);
 }
 
 .inventory-list h5{

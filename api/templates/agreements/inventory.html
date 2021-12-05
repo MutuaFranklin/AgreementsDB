@@ -25,8 +25,10 @@
                     <td>{{inventory.manager}}</td>
                     <td>{{inventory.license_type}}</td>
                     <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-primary">View Inventory</button></a></td>
-                    <td><a href="/update-inventory/{{inventory.id}}"><button type="button" class="btn btn-warning">Update Inventory</button></a></td>
-                    <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-danger">Delete Inventory</button></a></td>
+                        {% if request.user.profile.role == focal or admin %}
+                            <td><a href="/update-inventory/{{inventory.id}}"><button type="button" class="btn btn-update">Update Inventory</button></a></td>
+                            <td><a href="/inventory/{{inventory.id}}"><button type="button" class="btn btn-danger">Delete Inventory</button></a></td>
+                        {% endif %}
                     {% empty %}
 						<p>No Uploaded Agreements</p>
 					{% endfor%}

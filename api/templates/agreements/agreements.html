@@ -1,5 +1,5 @@
-{% extends 'agreements/base.html'%} 
-{% load static %} 
+{% extends 'agreements/base.html'%}
+{% load static %}
 {% block content %}
 
 <div class="container-fluid agreements">
@@ -7,20 +7,80 @@
         <h5>AGREEMENTS</h5>
 
         <div class="table">
-            <table class="mt-3">
-                <tr>
-                  <th>Index</th>
-                  <th>Agreement Title</th>
-                  <th>Agreement Type</th>
-                  <th>Receiving Division</th>
-                  <th>Service Provider</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
+            {% if messages %}
+            {% for message in messages %}
+            {% if message.tags == "error"%}
+                <div class="alert alert-danger">
+                    {{ message }}
+                </div>
+            {% else %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
 
-        
-                </tr>
+            <table>
                 <tr>
-                    {% for agreement in agreements %}
+                    <th>Filter</th>
+                    <th>
+                        <input name=title class="form-control form-control-lg" type="text"
+                            placeholder="Search by Agreement Title" required aria-label=".form-control-lg example">
+                    </th>
+                    <th>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Agreement Type</option>
+                            {% for agreement_type in agreement_types %}
+                            <option value="{{agreement_type.agreement_type}}">{{agreement_type.agreement_type}}</option>
+                            {% endfor %}
+                        </select>
+                    </th>
+                    <th>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Receiving Division</option>
+                            {% for division in divisions %}
+                            <option value="{{division.division_name}}">{{division.division_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </th>
+                    <th>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Service Provider</option>
+                            {% for provider in service_providers %}
+                            <option value="{{provider.service_provider_name}}">{{provider.service_provider_name}}
+                            </option>
+                            {% endfor %}
+                        </select>
+
+                    </th>
+
+
+                </tr>
+
+            </table>
+            {% if request.user.profile.role == focal or admin %}
+            <button type="button" data-bs-toggle="modal" data-bs-target="#agreementPostModal"
+                class="btn publish mt-2">Publish Agreement</button>
+            {% endif %}
+
+            {% include "agreements/agreementPostModal.html" %}
+
+
+            <table class="mt-3">
+
+                <tr>
+                    <th>Index</th>
+                    <th>Agreement Title</th>
+                    <th>Agreement Type</th>
+                    <th>Receiving Division</th>
+                    <th>Service Provider</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+
+                </tr>
+                {% for agreement in agreements %}
+                <tr>
                     <td>{{ forloop.counter }}</td>
                     <td>{{agreement.agreement_title}}</td>
                     <td>{{agreement.agreement_type}}</td>
@@ -28,24 +88,35 @@
                     <td>{{agreement.service_provider}}</td>
                     <td>{{agreement.start_date}}</td>
                     <td>{{agreement.end_date}}</td>
-                    <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn btn-info">View Agreement</button></a></td>
-                            <td><a href="/update-agreement/{{agreement.id}}"><button type="button" class="btn btn-success">Update Agreement</button></a></td>
-                            <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn btn-danger">Delete Agreement</button></a></td>
+                    <td><a href="/agreement/{{agreement.id}}"><button type="button" class="btn view ">View
+                                Agreement</button></a></td>
+                    {% if request.user.profile.role == focal or admin %}
+                    <td><a href="/update-agreement/{{agreement.id}}"><button type="button"
+                                class="btn btn-success">Update Agreement</button></a></td>
+
+                    <td>
+                        
+                        <a href="/delete-agreement/{{agreement.id}}"><button type="button"onclick="return confirm('Are you sure you want to delete?');" class="btn btn-danger">Delete
+                                Agreement</button></a>
+                    </td>
+                    {% endif %}
+
 
                     {% empty %}
-						<p>No Uploaded Agreements</p>
-					{% endfor%}
+                    <p>No Uploaded Agreements</p>
+                    
                 </tr>
-        
-        
-        
-        
-              </table>
+                {% endfor%}
+
+
+
+
+            </table>
 
         </div>
 
 
-        
+
     </div>
 </div>
 

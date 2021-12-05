@@ -11,6 +11,9 @@
       <img src="../../../static/images/ms.png" alt="" height=70>
     </div>
     <div class="form m-4">
+      {% if form.errors %}
+        <p class="alert login-error">username or password not correct</p>
+      {% endif %}
       <form action="" method="post">
         {% csrf_token %}        
         <div class="form-group m-3">

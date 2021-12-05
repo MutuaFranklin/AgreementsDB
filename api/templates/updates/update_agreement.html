@@ -1,47 +1,23 @@
 {% extends 'agreements/base.html'%} 
 {% load static %} 
 {% block content %}
+{% load bootstrap5 %}
+
 
 <div class="container-fluid single-agreement">
-    <div class="col-md-11 agreement-details mt-3">
+    <div class="col-md-11 agreement-update mt-3">
         <h5>Update {{agreement.agreement_title}} Agreement</h5>
 
-            <div class="col-md-5 agreement fw-light">
-                <div class="description">
-                    <h6>Content Description</h6>
-                    <p>{{agreement.content_description}}</p>
+            <div class="col-md-5 agreement-update-form fw-light">
+                <form action="" method="post" enctype="multipart/form-data" novalidate>
+                    {%csrf_token%}
 
-                    <h6>Service Offered</h6>
-                    <p>{{agreement.service_offered}}</p>
-                </div>
-                <div class="description">
-                    <p><span>Agreement Type:</span> {{agreement.agreement_type}}</p>
-                    <p><span>Service Provider:</span> {{agreement.service_provider}}</p>
-                    <p><span>Receiving Division:</span> {{agreement.division}}</p>
-                    <p><span>Start Date:</span> {{agreement.start_date}}</p>
-                    <p><span>End Date:</span> {{agreement.end_date}}</p>
-                    <p><span>Focal Point: </span> {{agreement.focal_point}}</p>
+                    {{ form.as_p }}
 
-
-
-
-
-                </div>
-
-                <div class="description">
-                    <h6>Document Attachment</h6>
-                    <p>{{agreement.document_attachment}}</p>
-                    <a href=""><i class="fa fa-download m-2" aria-hidden="true"></i></a>
-                </div>
-
-
-                <div class="description">
-                    <p><span>Uploaded By: </span> {{agreement.uploaded_by}}</p>
-
-                    <p><span>Uploaded On: </span> {{agreement.created_at}}</p>
-
-
-                </div>
+                    
+                    <button class="btn btn-sm btn-success upload-btn mb-3">Update</button>
+  
+                </form>
 
             </div>
            

@@ -15,7 +15,7 @@ class Role(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE)
+    user = models.OneToOneField(User, on_delete = models.CASCADE, related_name='profile')
     role = models.ForeignKey(Role, on_delete=models.CASCADE ,related_name= 'user_role', default=2)
     created_at = models.DateTimeField(auto_created=True, blank=True, null=True)
     updated_on = models.DateTimeField(auto_created=True, blank=True, null=True)
@@ -98,8 +98,8 @@ class Agreement(models.Model):
     project_name = models.CharField(max_length=255)
     document_attachment = models.FileField(upload_to='documents/')
     uploaded_by = models.ForeignKey(Profile, on_delete=models.CASCADE ,related_name= 'uploader')
-    created_at = models.DateTimeField(auto_created=True)
-    updated_on = models.DateTimeField(auto_created=True, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     class Meta:
             ordering = ('-created_at',)
